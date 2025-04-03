@@ -11,9 +11,9 @@ export default new DataSource({
   type: 'postgres',
   host: configService.get('DB_HOST'),
   port: +configService.get<number>('DB_PORT'),
-  username: configService.get('DB_USERNAME'),
-  password: configService.get('DB_PASSWORD'),
-  database: configService.get('DB_NAME'),
+  username: configService.get('POSTGRES_USER'),
+  password: configService.get('POSTGRES_PASSWORD'),
+  database: configService.get('POSTGRES_DB'),
   entities: [join(process.cwd(), 'src/**/*.entity.ts')],
   migrations: [join(process.cwd(), 'src/migrations/*.ts')],
 });
